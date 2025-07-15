@@ -11,16 +11,7 @@
 <body>
     
     <div id="wrapper">
-        <header>
-            <img src="images/alveyworld_dolphin_logo.png" alt="Bowler Hat Guy Logo">
-            <h1>Bro. Alvey's Portal Page</h1>
-        </header>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="wwr/index.html">WWR</a>
-            <a href="ice/index.html">ICE</a>
-            <a href="aboutme.html">About Me</a>
-        </nav>
+        <div id="header"></div>
         <main>
             <div class="content">
                 <p>Icing caramels sweet roll liquorice macaroon wafer. Macaroon jujubes halvah chocolate bar tiramisu carrot cake jelly-o jelly. Pastry gingerbread ice cream candy canes bear claw marzipan gummi bears sweet roll. Jelly beans powder jelly muffin toffee. Lollipop powder tiramisu cake candy canes bonbon icing cupcake brownie. Sesame snaps tart ice cream icing sweet roll candy canes cotton candy marshmallow muffin. Donut icing tart toffee danish dragée ice cream carrot cake candy canes. Sweet roll tart pie chocolate bar sweet roll soufflé topping. Fruitcake soufflé chupa chups icing jelly beans brownie gummi bears gingerbread. Sweet roll toffee danish bonbon powder. Apple pie gummi bears sugar plum dragée fruitcake cake croissant. Cookie ice cream tiramisu jelly-o jelly sweet. Chocolate tiramisu soufflé marshmallow jelly beans sweet lollipop.</p>
@@ -33,36 +24,23 @@
 
             </div>
         </main>
-        <footer>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="wwr/index.html">WWR</a></li>
-                <li><a href="ice/index.html">ICE</a></li>
-                <li><a href="aboutme.html">About Me</a></li>
-            </ul>
-            <form>
-                <h3>Contact</h3>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
-                
-                <input type="radio" id="gender" name="gender" value="male">
-                <label for="gender">Male</label>
-                <input type="radio" id="gender" name="gender" value="female">
-                <label for="gender">Female</label>
-                
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" cols="15" rows="2" required></textarea>
-                
-                <input type="submit">
-            </form>
-            <p>&copy; Alvey 2025</p>
-        </footer>
+        <div id="footer"></div>
     </div>
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("header").innerHTML = data;
+                });
 
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("footer").innerHTML = data;
+                });
+        });
+    </script>
 </body>
 
 </html>

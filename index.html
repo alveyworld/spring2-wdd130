@@ -5,22 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal Page</title>
-    <link rel="stylesheet" href="styles/style2.css"> 
+    <link rel="stylesheet" href="styles/style2.css">
 </head>
 
 <body>
     
     <div id="wrapper">
-        <header>
-            <img src="images/alveyworld_dolphin_logo.png" alt="Bowler Hat Guy Logo">
-            <h1>Bro. Alvey's Portal Page</h1>
-        </header>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="wwr/index.html">WWR</a>
-            <a href="ice/index.html">ICE</a>
-            <a href="aboutme.html">About Me</a>
-        </nav>
+        <div id="header"></div>
         <main>
             <section>
                 <img src="images/shrimp.png" alt="Shrimp image">
@@ -56,36 +47,25 @@
                 
             </table>
         </main>
-        <footer>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="wwr/index.html">WWR</a></li>
-                <li><a href="ice/index.html">ICE</a></li>
-                <li><a href="aboutme.html">About Me</a></li>
-            </ul>
-            <form>
-                <h3>Contact</h3>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
-                
-                <input type="radio" id="gender" name="gender" value="male">
-                <label for="gender">Male</label>
-                <input type="radio" id="gender" name="gender" value="female">
-                <label for="gender">Female</label>
-                
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" cols="15" rows="2" required></textarea>
-                
-                <input type="submit">
-            </form>
-            <p>&copy; Alvey 2025</p>
-        </footer>
+        <div id="footer"></div>
     </div>
 
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("header").innerHTML = data;
+                });
+
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("footer").innerHTML = data;
+                });
+        });
+    </script>
 </body>
 
 </html>
